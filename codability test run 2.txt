@@ -1,0 +1,49 @@
+Microsoft Windows [Version 10.0.22631.3880]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\anush>cd downloads
+
+C:\Users\anush\Downloads>cd university-api
+
+C:\Users\anush\Downloads\university-api>docker-compose up --build
+time="2024-08-13T16:50:10-04:00" level=warning msg="C:\\Users\\anush\\Downloads\\university-api\\docker-compose.yml: `version` is obsolete"
+[+] Building 5.3s (10/10) FINISHED                                                                     docker:desktop-linux
+ => [web internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 489B                                                                                   0.0s
+ => [web internal] load metadata for docker.io/library/python:3.8-slim                                                 0.8s
+ => [web auth] library/python:pull token for registry-1.docker.io                                                      0.0s
+ => [web internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                        0.0s
+ => [web 1/4] FROM docker.io/library/python:3.8-slim@sha256:e775439e2ddd25efda733db0465ef74225c8da195add680eef5e6b761  0.0s
+ => [web internal] load build context                                                                                  0.0s
+ => => transferring context: 3.83kB                                                                                    0.0s
+ => CACHED [web 2/4] WORKDIR /app                                                                                      0.0s
+ => [web 3/4] COPY . /app                                                                                              0.1s
+ => [web 4/4] RUN pip install --no-cache-dir flask                                                                     4.0s
+ => [web] exporting to image                                                                                           0.2s
+ => => exporting layers                                                                                                0.1s
+ => => writing image sha256:184938eaab1fe6a05dc1021f07a0bbd2f60dbbe77174d57a717d534b09f4f153                           0.0s
+ => => naming to docker.io/library/university-api-web                                                                  0.0s
+[+] Running 1/1
+ ✔ Container university-api-web-1  Recreated                                                                           0.1s
+Attaching to web-1
+web-1  |  * Serving Flask app 'app'
+web-1  |  * Debug mode: off
+web-1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+web-1  |  * Running on all addresses (0.0.0.0)
+web-1  |  * Running on http://127.0.0.1:5000
+web-1  |  * Running on http://172.18.0.2:5000
+web-1  | Press CTRL+C to quit
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:51:20] "POST /students HTTP/1.1" 400 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:51:30] "POST /students HTTP/1.1" 201 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:51:47] "GET /students HTTP/1.1" 200 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:51:54] "GET /students HTTP/1.1" 200 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:52:00] "GET /students HTTP/1.1" 200 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:52:27] "POST /courses HTTP/1.1" 201 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:53:06] "POST /students/1/courses%0Ahttp://localhost:5000/courses HTTP/1.1" 404 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:53:17] "POST /students/1/courses%0Ahttp://localhost:5000/courses HTTP/1.1" 404 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:53:32] "POST /students/1/courses HTTP/1.1" 200 -
+web-1  | 172.18.0.1 - - [13/Aug/2024 20:54:00] "GET /students/1/courses HTTP/1.1" 200 -
+web-1 exited with code 137
+
+C:\Users\anush\Downloads\university-api>   w Enable Watch
